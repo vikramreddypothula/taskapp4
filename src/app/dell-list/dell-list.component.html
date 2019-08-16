@@ -1,0 +1,52 @@
+<div style="float: right; width: 100%;">
+
+    <div style="float: left; width: 30%;">
+  
+      <div>
+  
+        <ul *ngFor="let org of data">
+  
+          <li>{{org.userid}}</li>
+  
+          <li>{{org.username}}</li>
+  
+          <li>{{org.title}}</li>
+  
+        </ul>
+  
+      </div>
+  
+    </div>
+  
+     <button mat-raised-button (click)="openDialog()">+Adduser</button> 
+  
+  
+    <!-- <div style="float: left; width: 60%;">
+  
+  
+      <div style="border-block: 2px;">
+        <h4 style="color:cornflowerblue;">Add User</h4>
+        <div style="width: 150px">
+          <label style="width: 15%">User Id </label>
+          <!-- <input type="text"> -->
+          <!-- <input type="text" [(ngModel)]="userid">
+        </div>
+        <div style="width: 150px">
+          <label style="width: 15%">User name </label>
+          <input type="text" [(ngModel)]="username">
+          <!-- <input type="text"> -->
+        <!-- </div>
+        <div style="width: 150px">
+          <label style="width: 15%">Title </label>
+          <input type="text" [(ngModel)]="title">
+          <!-- <input type="text"> 
+        </div>
+        <!-- <p>{{User.name}}</p> -->
+  
+        <!-- <button (click)="SaveUser()">Add User</button>
+  
+      </div>
+  
+    </div> --> 
+  
+  </div>

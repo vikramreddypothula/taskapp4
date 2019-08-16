@@ -1,0 +1,88 @@
+
+ <!-- <div style="float: right; width: 100%;"> -->
+
+    <!-- <div style="float: left; width: 30%;"> -->
+  
+      <div>
+  
+        <ul *ngFor="let org of dataobj">
+  
+          <li>{{org.userid}}</li>
+  
+          <li>{{org.username}}</li>
+  
+          <li>{{org.title}}</li>
+  
+        </ul>
+  
+      </div>
+  
+    <!-- </div> --> 
+
+
+<mat-dialog-content>
+
+   
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>User Id </label>
+            <input type="text" [(ngModel)]="userid" formControlName="userid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userid.errors }" />
+            <div *ngIf="submitted && f.userid.errors" class="invalid-feedback">
+                <div *ngIf="f.userid.errors.required">UserID is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Username </label>
+            <input type="text"[(ngModel)]="username" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">username is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>title </label>
+            <input type="text" [(ngModel)]="title" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required">Title is required</div>
+               
+            </div>
+        </div>
+        
+    </form>
+
+
+
+
+ <!-- <div style="float: left; width: 60%;">
+
+
+    <div style="border-block: 2px;">
+      <h4 style="color:cornflowerblue;">Add User</h4>
+      <div style="width: 150px">
+        <label style="width: 15%">User Id </label>
+       
+         <input type="text" [(ngModel)]="userid">
+      </div>
+      <div style="width: 150px">
+        <label style="width: 15%">User name </label>
+        <input type="text" [(ngModel)]="username">
+        
+       </div>
+      <div style="width: 150px">
+        <label style="width: 15%">Title </label>
+        <input type="text" [(ngModel)]="title">
+     
+      </div>
+     
+
+       
+
+    </div>
+
+  </div>  -->
+</mat-dialog-content>
+<mat-dialog-actions>
+<button mat-button mat-dialog-close>Cancel</button>
+
+<button mat-raised-button (click)='onSubmit()'>Save</button>
+</mat-dialog-actions>
